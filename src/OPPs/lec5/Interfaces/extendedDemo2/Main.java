@@ -1,13 +1,13 @@
-package OPPs.lec5.Interfaces.extendedDemo2.extendedDemo;
+package OPPs.lec5.Interfaces.extendedDemo2;
 
 public class Main implements B, A{
 
-//    @Override
+    @Override
     public void greet() {
 
     }
 
-//    @Override
+    @Override
     public void fun() {
 
     }

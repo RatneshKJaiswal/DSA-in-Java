@@ -1,2 +1,6 @@
-package OPPs.lec5.Interfaces;public class Media {
+package OPPs.lec5.Interfaces;
+
+public interface Media {
+    void start();
+    void stop();
 }
