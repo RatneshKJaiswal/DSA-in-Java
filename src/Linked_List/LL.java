@@ -68,6 +68,21 @@ public class LL {
         size++;
     }
 
+    public void insertRec(int index, int value){
+        rec(index, value, head);
+    }
+
+    private void rec(int index, int value, Node curr){
+        if(index == 1){
+            Node newNode = new Node(value);
+            Node temp = curr.next;
+            curr.next = newNode;
+            newNode.next = temp;
+            return;
+        }
+        rec(index - 1, value, curr.next);
+    }
+
     public int deleteFirst(){
         if(size == 0){
             System.out.println("Nothing to delete");

@@ -23,5 +23,8 @@ public class MainLL {
 
         System.out.println(list.deleteIndex(2)+" Removed ");
         list.display();
+
+        list.insertRec(3,56);
+        list.display();
     }
 }
