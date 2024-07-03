@@ -47,7 +47,7 @@ public class BFS {
                 if(curNode.right!=null){
                     queue.offer(curNode.right);
                 }
-            }
+            } 
             res.add(curLevel);
         }
 
