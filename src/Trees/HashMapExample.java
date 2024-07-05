@@ -11,6 +11,9 @@ public class HashMapExample {
         map.put("Roy", 21);
         map.put("Coll", 3);
 
+//        String str="abc";
+//        System.out.println(str.hashCode());
+
         System.out.println(map.get("Roy"));
         System.out.println(map.getOrDefault("Ram",98));
         System.out.println(map.containsKey("Ram"));
