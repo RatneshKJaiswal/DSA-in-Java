@@ -74,6 +74,23 @@ public class bfs_dfs {
         }
     }
 
+    public static void printAllPaths(ArrayList<Edge>[] graph,boolean[] vis, int curr, String path, int tar){
+        if(curr==tar){
+            System.out.println(path);
+            return;
+        }
+        for(int i =0; i<graph[curr].size(); i++){
+            Edge e = graph[curr].get(i);
+            if(!vis[e.dest]){
+                vis[curr]=true;
+                printAllPaths(graph,vis,e.dest,path+e.dest,tar);
+                vis[curr]=false;
+            }
+
+        }
+
+    }
+
     public static void main(String[] args) {
         int V = 7;
 
@@ -81,19 +98,21 @@ public class bfs_dfs {
         createGraph(graph);
 
         boolean[] visited = new boolean[V];
-        // This step helps when there are disjoint graphs
-        for(int i=0;i<V;i++){
-            if(!visited[i]){
-                bfs(graph,V,visited,i);
-            }
-        }
-        System.out.println(" ");
+//        // This step helps when there are disjoint graphs
+//        for(int i=0;i<V;i++){
+//            if(!visited[i]){
+//                bfs(graph,V,visited,i);
+//            }
+//        }
+//        System.out.println(" ");
+//
+//        boolean[] vis = new boolean[V];
+//        for(int i=0;i<V;i++){
+//            if(!vis[i]){
+//                dfs(graph,0,vis);
+//            }
+//        }
 
-        boolean[] vis = new boolean[V];
-        for(int i=0;i<V;i++){
-            if(!vis[i]){
-                dfs(graph,0,vis);
-            }
-        }
+        printAllPaths(graph, visited, 0, "0", 5);
     }
 }
